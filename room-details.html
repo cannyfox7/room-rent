@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details - Azad Bhawan</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <a href="index.html" class="back-btn">← Back to Rooms</a>
+    
+    <section class="room-header">
+        <h1 id="room-number">Room 101</h1>
+        <div class="tenant-info">
+            <div class="tenant-name" id="tenant-name">Rahul Sharma</div>
+            <p style="font-size: 1rem;">+91 98765 43210 | rahul@tenant.com</p>
+        </div>
+    </section>
+
+    <section class="payment-section">
+        <div class="total-due" id="total-due">Current Due: ₹0</div>
+        
+        <h2 class="section-title">Payment History (Last 6 Months)</h2>
+        <button class="toggle-full" onclick="toggleFullHistory()">📊 View Full History</button>
+        
+        <div class="payments-grid" id="payment-history">
+            <!-- DYNAMICALLY POPULATED -->
+        </div>
+    </section>
+
+
+    <button class="toggle-full" onclick="toggleFullHistory()">📊 View Full History</button>
+<script src="main.js"></script>
+
+
+</body>
+</html>

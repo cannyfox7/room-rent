@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azad Bhawan - Tenant Portal</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Azad Bhawan</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#payments">Payments</a></li>
+                <li><a href="#" onclick="openAdminModal()">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Azad Bhawan</h1>
+        <p>Your modern portal for rent payments and status checks. Select your room below for quick access.</p>
+
+    </section>
+
+    <section id="rooms" class="rooms-section">
+        <h2 class="section-title">Select Your Room</h2>
+        <div class="rooms-grid">
+            <div class="room-card" onclick="openRoom('101')">
+                <div class="room-number">101</div>
+                <button class="room-action">View Payment Status</button>
+            </div>
+            <div class="room-card" onclick="openRoom('102')">
+                <div class="room-number">102</div>
+                <button class="room-action">View Payment Status</button>
+            </div>
+            <div class="room-card" onclick="openRoom('103')">
+                <div class="room-number">103</div>
+                <button class="room-action">View Payment Status</button>
+            </div>
+            <div class="room-card" onclick="openRoom('104')">
+                <div class="room-number">104</div>
+                <button class="room-action">View Payment Status</button>
+            </div>
+            <div class="room-card" onclick="openRoom('201')">
+                <div class="room-number">201</div>
+                <button class="room-action">View Payment Status</button>
+            </div>
+            <div class="room-card" onclick="openRoom('202')">
+                <div class="room-number">202</div>
+                <button class="room-action">View Payment Status</button>
+            </div>
+            <div class="room-card" onclick="openRoom('203')">
+                <div class="room-number">203</div>
+                <button class="room-action">View Payment Status</button>
+            </div>
+        </div>
+    </section>
+<!-- ADMIN LOGIN MODAL -->
+<div id="adminModal" class="admin-modal">
+    <div class="admin-modal-content">
+        <span class="admin-close" onclick="closeAdminModal()">&times;</span>
+        <h2 style="color: var(--sunset-orange); margin-bottom: 1.5rem;">🔐 Admin Login</h2>
+        <input type="password" id="adminPassword" class="admin-input" placeholder="Enter Password" onkeyup="this.onkeypress=function(e){e.keyCode==13&&adminLogin()}">
+        <button class="admin-btn" onclick="adminLogin()">Login</button>
+    </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" class="admin-panel">
+    <div class="admin-panel-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h2 style="color: var(--sunset-orange);">⚙️ Admin Panel</h2>
+            <span class="admin-close" onclick="closeAdminPanel()" style="font-size: 2rem; cursor: pointer;">&times;</span>
+        </div>
+        
+        <div class="room-admin-form">
+            <h3>Update Room Data</h3>
+            <div class="form-group">
+                <label>Room:</label>
+                <select id="adminRoomNum" onchange="updateAdminForm()">
+                    <option value="101">Room 101</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Tenant:</label>
+                <input type="text" id="adminTenant" placeholder="Tenant name">
+            </div>
+            <div class="form-group">
+                <label>Contact:</label>
+                <input type="text" id="adminContact" placeholder="+91 98765 43210">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="adminEmail" placeholder="tenant@email.com">
+            </div>
+            <div class="form-group">
+                <label>Due (₹):</label>
+                <input type="number" id="adminDue" placeholder="0">
+            </div>
+            <button class="admin-btn" onclick="saveRoomData()">💾 Save Changes</button>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Azad Bhawan, Patna, Bihar. All rights reserved.</p>
+    </footer>
+
+
+<script src="main.js"></script>
+
+
+</body>
+</html>
