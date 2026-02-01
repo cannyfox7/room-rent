@@ -59,59 +59,74 @@
             </div>
         </div>
     </section>
-<!-- ADMIN LOGIN MODAL -->
-<div id="adminModal" class="admin-modal">
-    <div class="admin-modal-content">
-        <span class="admin-close" onclick="closeAdminModal()">&times;</span>
-        <h2 style="color: var(--sunset-orange); margin-bottom: 1.5rem;">🔐 Admin Login</h2>
-        <input type="password" id="adminPassword" class="admin-input" placeholder="Enter Password" onkeyup="this.onkeypress=function(e){e.keyCode==13&&adminLogin()}">
-        <button class="admin-btn" onclick="adminLogin()">Login</button>
-    </div>
-</div>
 
-<!-- ADMIN PANEL -->
-<div id="adminPanel" class="admin-panel">
-    <div class="admin-panel-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-            <h2 style="color: var(--sunset-orange);">⚙️ Admin Panel</h2>
-            <span class="admin-close" onclick="closeAdminPanel()" style="font-size: 2rem; cursor: pointer;">&times;</span>
-        </div>
-        
-        <div class="room-admin-form">
-            <h3>Update Room Data</h3>
-            <div class="form-group">
-                <label>Room:</label>
-                <select id="adminRoomNum" onchange="updateAdminForm()">
-                    <option value="101">Room 101</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Tenant:</label>
-                <input type="text" id="adminTenant" placeholder="Tenant name">
-            </div>
-            <div class="form-group">
-                <label>Contact:</label>
-                <input type="text" id="adminContact" placeholder="+91 98765 43210">
-            </div>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" id="adminEmail" placeholder="tenant@email.com">
-            </div>
-            <div class="form-group">
-                <label>Due (₹):</label>
-                <input type="number" id="adminDue" placeholder="0">
-            </div>
-            <button class="admin-btn" onclick="saveRoomData()">💾 Save Changes</button>
-        </div>
-    </div>
-</div>
 
     <footer class="footer">
         <p>&copy; 2026 Azad Bhawan, Patna, Bihar. All rights reserved.</p>
     </footer>
 
 
-<script src="main.js"></script>
+    <!-- Load JavaScript FIRST -->
+    <script src="main.js"></script>
+    
+    <!-- ✅ ADMIN LOGIN MODAL - ADD THIS -->
+    <div id="adminModal" class="admin-modal">
+        <div class="admin-modal-content">
+            <span class="admin-close" onclick="closeAdminModal()">&times;</span>
+            <h2 style="color: #ee9b00; margin-bottom: 1.5rem;">🔐 Admin Login</h2>
+            <input type="password" id="adminPassword" class="admin-input" placeholder="Enter Password" 
+                   onkeyup="if(event.keyCode==13) adminLogin()">
+            <button class="admin-btn" onclick="adminLogin()">Login</button>
+        </div>
+    </div>
+
+    <!-- ✅ ADMIN PANEL - ADD THIS -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-panel-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="color: #ee9b00;">⚙️ Admin Panel</h2>
+                <span class="admin-close" onclick="closeAdminPanel()" style="font-size: 2rem; cursor: pointer;">&times;</span>
+            </div>
+            
+            <div class="room-admin-form">
+                <h3>📝 Update Room Data</h3>
+                <div class="form-group">
+                    <label>Room:</label>
+                    <select id="adminRoomNum" onchange="updateAdminForm()">
+                        <option value="101">Room 101</option>
+                        <option value="102">Room 102</option>
+                        <option value="103">Room 103</option>
+                        <option value="104">Room 104</option>
+                        <option value="201">Room 201</option>
+                        <option value="202">Room 202</option>
+                        <option value="203">Room 203</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tenant:</label>
+                    <input type="text" id="adminTenant" placeholder="Enter tenant name">
+                </div>
+                <div class="form-group">
+                    <label>Contact:</label>
+                    <input type="text" id="adminContact" placeholder="+91 9876543210">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="adminEmail" placeholder="tenant@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Due (₹):</label>
+                    <input type="number" id="adminDue" placeholder="0" min="0">
+                </div>
+                <button class="admin-btn" onclick="saveRoomData()">💾 Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
 
 
 </body>
